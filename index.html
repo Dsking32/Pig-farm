@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenPasture Farm – Premium Pig Farm Nigeria</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ─── RESET & BASE ───────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+:root {
+  --cream:      #F9F4EC;
+  --warm-white: #FFFDF9;
+  --dark:       #1A1610;
+  --brown:      #6B3D1E;
+  --brown-mid:  #9B5E34;
+  --brown-light:#C8895A;
+  --green-deep: #2D5016;
+  --green:      #4A7A1E;
+  --green-light:#7FB347;
+  --green-pale: #EDF5DC;
+  --amber:      #C48C18;
+  --amber-pale: #FBF0D4;
+  --red:        #8B2515;
+  --muted:      #7A6E60;
+  --border:     rgba(26,22,16,0.10);
+  --shadow-sm:  0 2px 12px rgba(26,22,16,0.08);
+  --shadow-md:  0 8px 32px rgba(26,22,16,0.12);
+  --shadow-lg:  0 24px 64px rgba(26,22,16,0.18);
+  --radius-sm:  8px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+  --radius-xl:  40px;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img { display: block; width: 100%; object-fit: cover; }
+a  { text-decoration: none; color: inherit; }
+
+/* ─── UTILITY ────────────────────────────────────── */
+.tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; padding: 6px 16px;
+  border-radius: 100px;
+}
+.tag-green { background: var(--green-pale); color: var(--green-deep); }
+.tag-amber { background: var(--amber-pale); color: var(--brown); }
+.tag-dark  { background: var(--dark); color: var(--cream); }
+
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: currentColor; animation: blink 2.2s infinite;
+}
+@keyframes blink {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(.8)}
+}
+
+.section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: .6rem; }
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 700; line-height: 1.08; letter-spacing: -.02em;
+  color: var(--dark);
+}
+.section-heading em { font-style: italic; color: var(--brown-mid); }
+.section-sub { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 540px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 500;
+  padding: 13px 30px; border-radius: 100px; cursor: pointer;
+  border: none; transition: all .22s ease; white-space: nowrap;
+}
+.btn-dark  { background: var(--dark); color: var(--cream); }
+.btn-dark:hover  { background: var(--brown); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-outline { background: transparent; color: var(--dark); border: 1.5px solid rgba(26,22,16,.2); }
+.btn-outline:hover { border-color: var(--dark); background: rgba(26,22,16,.04); }
+.btn-green { background: var(--green); color: white; }
+.btn-green:hover { background: var(--green-deep); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.arrow { font-style: normal; }
+
+/* ─── ANIMATIONS ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .7s ease both; }
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}
+.d4{animation-delay:.42s}.d5{animation-delay:.54s}
+
+/* ─── NAV ────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 70px; padding: 0 clamp(1.5rem, 5vw, 4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(249,244,236,.94); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .3s;
+}
+nav.scrolled { box-shadow: var(--shadow-sm); }
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 700; color: var(--dark);
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-icon {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--green-pale); display: flex; align-items: center;
+  justify-content: center; font-size: 20px;
+}
+
+.nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+.nav-links a { font-size: 14px; font-weight: 400; color: var(--muted); transition: color .2s; }
+.nav-links a:hover { color: var(--dark); }
+
+.nav-order {
+  background: var(--dark); color: var(--cream) !important;
+  padding: 9px 22px; border-radius: 100px; font-weight: 500;
+}
+.nav-order:hover { background: var(--brown) !important; }
+
+/* hamburger */
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 6px;
+}
+.nav-hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--dark); border-radius: 2px;
+  transition: all .3s;
+}
+
+/* mobile nav */
+.mobile-menu {
+  display: none; position: fixed; inset: 70px 0 0 0;
+  background: var(--cream); z-index: 190;
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 2.5rem;
+  font-size: 22px; font-family: 'Cormorant Garamond', serif;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--dark); font-weight: 600; transition: color .2s; }
+.mobile-menu a:hover { color: var(--green); }
+
+/* ─── HERO ───────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding-top: 70px; overflow: hidden;
+}
+
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(3rem,7vw,6rem) clamp(2rem,5vw,4rem);
+  background: var(--cream);
+  position: relative; z-index: 1;
+}
+.hero-left::after {
+  content: '';
+  position: absolute; right: -40px; top: 10%; bottom: 10%;
+  width: 80px;
+  background: radial-gradient(ellipse, rgba(74,122,30,.12), transparent 70%);
+  z-index: 0;
+}
+
+.hero-left > * { position: relative; z-index: 1; }
+
+.hero-tag { margin-bottom: 2rem; }
+
+.hero-h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem,5.5vw,5.2rem);
+  font-weight: 700; line-height: 1.02; letter-spacing: -.03em;
+  margin-bottom: 1.5rem; color: var(--dark);
+}
+.hero-h1 em { font-style: italic; color: var(--green); }
+.hero-h1 .line-under {
+  position: relative; display: inline-block;
+}
+.hero-h1 .line-under::after {
+  content: '';
+  position: absolute; left: 0; bottom: 2px; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--amber), transparent);
+  border-radius: 2px;
+}
+
+.hero-desc { font-size: 17px; color: var(--muted); max-width: 420px; margin-bottom: 2.5rem; line-height: 1.7; }
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+
+.hero-stats {
+  display: flex; gap: 2.5rem;
+  padding-top: 2rem; border-top: 1px solid var(--border);
+}
+.stat-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 700; color: var(--dark); line-height: 1;
+}
+.stat-l { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+/* Hero Right – image mosaic */
+.hero-right {
+  position: relative; overflow: hidden;
+  background: var(--dark);
+}
+.hero-main-img {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=900&q=80');
+  background-size: cover; background-position: center;
+}
+.hero-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(26,22,16,.45) 0%, rgba(26,22,16,.1) 100%);
+}
+.hero-img-badge {
+  position: absolute; bottom: 2.5rem; left: 2rem; right: 2rem;
+  background: rgba(249,244,236,.92); backdrop-filter: blur(8px);
+  border-radius: var(--radius-md); padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; gap: 1rem;
+  box-shadow: var(--shadow-md);
+}
+.hero-badge-icon {
+  width: 46px; height: 46px; background: var(--green-pale);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 22px; flex-shrink: 0;
+}
+.hero-badge-text h4 { font-size: 14px; font-weight: 600; color: var(--dark); }
+.hero-badge-text p  { font-size: 12px; color: var(--muted); }
+.hero-badge-rating  { margin-left: auto; text-align: right; }
+.hero-badge-stars   { color: var(--amber); font-size: 13px; letter-spacing: 2px; }
+.hero-badge-count   { font-size: 12px; color: var(--muted); }
+
+/* floating chip */
+.hero-chip {
+  position: absolute; top: 3rem; right: 2rem;
+  background: var(--green); color: white;
+  border-radius: 100px; padding: 8px 18px;
+  font-size: 13px; font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+/* ─── TRUST BAR ──────────────────────────────────── */
+.trust-bar {
+  background: var(--dark); color: var(--cream);
+  padding: 1.4rem clamp(1.5rem,5vw,4rem);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; flex-wrap: wrap; overflow: hidden;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 400; color: rgba(249,244,236,.75);
+  white-space: nowrap;
+}
+.trust-item span.ico { font-size: 18px; }
+.trust-divider { width: 1px; height: 24px; background: rgba(249,244,236,.15); }
+
+/* ─── ABOUT ──────────────────────────────────────── */
+.about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; min-height: 680px; overflow: hidden;
+}
+.about-images {
+  position: relative; overflow: hidden; min-height: 500px;
+}
+.about-img-main {
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=900&q=80');
+  background-size: cover; background-position: center;
+}
+.about-img-thumb {
+  position: absolute; bottom: 2rem; right: -1px;
+  width: 200px; height: 160px; border-radius: var(--radius-md) 0 0 var(--radius-md);
+  overflow: hidden; box-shadow: var(--shadow-lg);
+  border: 4px solid white;
+}
+.about-img-thumb img { height: 100%; object-fit: cover; }
+.about-year-badge {
+  position: absolute; top: 2rem; left: 2rem;
+  background: var(--amber); color: white;
+  border-radius: var(--radius-md); padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+.about-year-badge .yr { font-family: 'Cormorant Garamond',serif; font-size: 2.5rem; font-weight: 700; line-height:1; }
+.about-year-badge .yl { font-size: 12px; opacity: .85; margin-top: 3px; }
+
+.about-content {
+  padding: clamp(3rem,6vw,5rem) clamp(2rem,5vw,4.5rem);
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--warm-white);
+}
+.about-content .section-heading { margin: .6rem 0 1.2rem; }
+.about-content .section-sub { margin-bottom: 2.5rem; }
+
+.about-pillars {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem; margin-top: 2rem;
+}
+.pillar {
+  padding: 1.25rem; border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--cream); transition: box-shadow .25s, transform .25s;
+}
+.pillar:hover { box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.pillar-ico { font-size: 26px; margin-bottom: 8px; }
+.pillar h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.pillar p  { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* ─── PRODUCTS ───────────────────────────────────── */
+.products { padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem); }
+.products-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;
+}
+.products-header .section-heading { margin-top: .5rem; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-card {
+  background: var(--warm-white); border-radius: var(--radius-lg);
+  overflow: hidden; border: 1px solid var(--border);
+  transition: transform .28s, box-shadow .28s;
+}
+.product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+
+.product-img {
+  position: relative; height: 260px; overflow: hidden;
+}
+.product-img img { height: 100%; object-fit: cover; transition: transform .5s ease; }
+.product-card:hover .product-img img { transform: scale(1.06); }
+.product-img-badge {
+  position: absolute; top: 14px; left: 14px;
+}
+.product-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(26,22,16,.35) 0%, transparent 50%);
+}
+
+.product-body { padding: 1.5rem; }
+.product-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 700; margin-bottom: 6px; color: var(--dark);
+}
+.product-body p { font-size: 14px; color: var(--muted); line-height: 1.55; margin-bottom: 1.25rem; }
+.product-footer { display: flex; align-items: center; justify-content: space-between; }
+.product-price .amount { font-size: 22px; font-weight: 600; color: var(--dark); }
+.product-price .unit   { font-size: 13px; color: var(--muted); }
+.product-btn {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--dark); color: var(--cream); border: none;
+  font-size: 22px; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  transition: background .2s, transform .2s;
+}
+.product-btn:hover { background: var(--green); transform: scale(1.12); }
+
+/* ─── LARGE WHITE BREED SECTION ──────────────────── */
+.breed {
+  padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);
+  background: var(--warm-white);
+  overflow: hidden;
+}
+
+.breed-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem,6vw,6rem); align-items: center;
+}
+
+.breed-image-wrap {
+  position: relative;
+}
+.breed-main-photo {
+  border-radius: var(--radius-xl);
+  overflow: hidden; height: 520px;
+  box-shadow: var(--shadow-lg);
+}
+.breed-main-photo img { height: 100%; object-fit: cover; }
+
+.breed-stat-card {
+  position: absolute; bottom: -1.5rem; left: -1.5rem;
+  background: var(--dark); color: var(--cream);
+  border-radius: var(--radius-md); padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-lg); min-width: 200px;
+}
+.breed-stat-card .bsc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 700; line-height: 1;
+  color: var(--amber);
+}
+.breed-stat-card .bsc-label { font-size: 13px; color: rgba(249,244,236,.6); margin-top: 4px; }
+
+.breed-tag-float {
+  position: absolute; top: 1.5rem; right: -1rem;
+  background: var(--green); color: white;
+  border-radius: 100px; padding: 9px 20px;
+  font-size: 13px; font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.breed-content { padding: 1rem 0; }
+.breed-content .section-heading { margin: .5rem 0 1.2rem; }
+.breed-content .section-sub { margin-bottom: 2.5rem; }
+
+.breed-traits {
+  display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem;
+}
+.breed-trait {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 1.1rem 1.4rem; border-radius: var(--radius-md);
+  border: 1px solid var(--border); background: var(--cream);
+  transition: transform .25s, box-shadow .25s;
+}
+.breed-trait:hover { transform: translateX(6px); box-shadow: var(--shadow-sm); }
+.breed-trait-ico {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--green-pale); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.breed-trait-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; color: var(--dark); }
+.breed-trait-body p  { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.investor {
+  padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);
+  background: var(--warm-white);
+}
+.investor-intro {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+.investor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+.investor-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s, box-shadow .25s;
+}
+.investor-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.investor-card-icon {
+  width: 48px; height: 48px;
+  border-radius: 18px;
+  background: var(--green-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.investor-card h4 { font-size: 1rem; margin-bottom: 0.75rem; }
+.investor-card p { color: var(--muted); line-height: 1.7; }
+.investor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.breed-specs {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1rem; padding: 1.5rem;
+  background: var(--green-pale);
+  border-radius: var(--radius-lg);
+}
+.breed-spec { text-align: center; }
+.breed-spec .spec-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem; font-weight: 700; color: var(--green-deep); line-height: 1;
+}
+.breed-spec .spec-key { font-size: 12px; color: var(--green-deep); opacity: .7; margin-top: 4px; }
+
+/* ─── PORK CUTS SECTION ──────────────────────────── */
+.pork-cuts {
+  padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);
+  background: var(--cream); overflow: hidden;
+}
+.pork-cuts-header { text-align: center; margin-bottom: 3.5rem; }
+.pork-cuts-header .section-sub { margin: 1rem auto 0; }
+
+.cuts-layout {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: clamp(2rem,5vw,5rem); align-items: start;
+}
+
+/* Pig diagram */
+.pig-diagram-wrap {
+  position: relative;
+}
+.pig-diagram-wrap h3 {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.pig-svg-container {
+  background: var(--warm-white); border-radius: var(--radius-xl);
+  padding: 2rem; border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.pig-svg-container svg { width: 100%; height: auto; }
+
+/* Cut cards grid */
+.cuts-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.cut-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  transition: transform .25s, box-shadow .25s;
+  cursor: default;
+}
+.cut-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.cut-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: .75rem; }
+.cut-color-dot {
+  width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0;
+}
+.cut-card-top h4 { font-size: 15px; font-weight: 600; color: var(--dark); }
+.cut-card p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: .75rem; }
+.cut-card-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.cut-mini-tag {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px; border-radius: 100px;
+  background: var(--green-pale); color: var(--green-deep);
+}
+.cut-mini-tag.amber { background: var(--amber-pale); color: var(--brown); }
+
+/* ─── FARM GALLERY ───────────────────────────────── */
+.gallery { padding: 0; }
+.gallery-header {
+  padding: clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,4rem) 2rem;
+  text-align: center;
+}
+.gallery-header .section-sub { margin: 1rem auto 0; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
+  gap: 4px;
+}
+.g-item { overflow: hidden; position: relative; }
+.g-item img { height: 100%; object-fit: cover; transition: transform .5s ease; }
+.g-item:hover img { transform: scale(1.06); }
+.g-item.tall { grid-row: 1 / 3; }
+.g-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(to top, rgba(26,22,16,.7), transparent);
+  color: white; font-size: 13px; font-weight: 500;
+  opacity: 0; transition: opacity .3s;
+}
+.g-item:hover .g-caption { opacity: 1; }
+
+/* ─── PROCESS ────────────────────────────────────── */
+.process {
+  padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);
+  background: var(--dark); color: var(--cream); overflow: hidden;
+  position: relative;
+}
+.process::before {
+  content: '🌾';
+  position: absolute; font-size: 300px; opacity: .04;
+  right: -60px; top: -60px; pointer-events: none;
+}
+.process-header { text-align: center; margin-bottom: 4rem; }
+.process-header .section-eyebrow { color: var(--amber); }
+.process-header .section-heading { color: var(--cream); margin-top: .5rem; }
+
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem; position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 44px; left: 12%; right: 12%; height: 1px;
+  background: repeating-linear-gradient(90deg, rgba(196,140,24,.5) 0, rgba(196,140,24,.5) 10px, transparent 10px, transparent 22px);
+}
+
+.step {
+  text-align: center; padding: 2rem 1.25rem;
+  background: rgba(249,244,236,.05); border-radius: var(--radius-md);
+  border: 1px solid rgba(249,244,236,.08);
+  transition: background .25s, border-color .25s;
+}
+.step:hover { background: rgba(249,244,236,.09); border-color: rgba(196,140,24,.3); }
+.step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--amber); color: white;
+  font-family: 'Cormorant Garamond',serif; font-size: 24px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem; position: relative; z-index: 1;
+}
+.step-ico { font-size: 30px; display: block; margin-bottom: .75rem; }
+.step h4  { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--cream); }
+.step p   { font-size: 13px; color: rgba(249,244,236,.55); line-height: 1.55; }
+
+/* ─── TESTIMONIALS ───────────────────────────────── */
+.testimonials {
+  padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);
+  background: var(--green-pale); overflow: hidden;
+}
+.testimonials-header { margin-bottom: 3rem; }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 1.5rem;
+}
+.testi-card {
+  background: white; border-radius: var(--radius-lg);
+  padding: 2rem; border: 1px solid rgba(74,122,30,.12);
+  transition: box-shadow .25s, transform .25s;
+}
+.testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.testi-stars { color: var(--amber); font-size: 15px; letter-spacing: 3px; margin-bottom: 1rem; display: block; }
+.testi-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 400; font-style: italic;
+  line-height: 1.55; color: var(--dark); margin-bottom: 1.5rem;
+}
+.testi-author { display: flex; align-items: center; gap: 12px; }
+.testi-av {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; flex-shrink: 0;
+}
+.av-a { background: #c8e4b8; color: #27500a; }
+.av-b { background: #fac775; color: #633806; }
+.av-c { background: #b5d4f4; color: #0c447c; }
+.testi-name { font-size: 14px; font-weight: 600; color: var(--dark); }
+.testi-loc  { font-size: 12px; color: var(--muted); }
+
+/* ─── CTA BANNER ─────────────────────────────────── */
+.cta-banner {
+  margin: 0 clamp(1.5rem,5vw,4rem);
+  border-radius: var(--radius-xl); overflow: hidden;
+  position: relative; min-height: 360px;
+  display: flex; align-items: center;
+}
+.cta-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1400&q=80');
+  background-size: cover; background-position: center 60%;
+}
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(26,22,16,.85) 40%, rgba(26,22,16,.3));
+}
+.cta-content {
+  position: relative; z-index: 1;
+  padding: clamp(3rem,6vw,5rem); max-width: 600px;
+}
+.cta-content .section-heading { color: white; margin: .5rem 0 1rem; }
+.cta-content p { color: rgba(255,255,255,.75); font-size: 17px; margin-bottom: 2rem; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ─── CONTACT ────────────────────────────────────── */
+.contact {
+  padding: clamp(4rem,8vw,7rem) clamp(1.5rem,5vw,4rem);
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: clamp(3rem,6vw,6rem); align-items: start;
+}
+.contact-info .section-heading { margin: .5rem 0 1rem; }
+.contact-info .section-sub { margin-bottom: 2.5rem; }
+.contact-cards { display: flex; flex-direction: column; gap: 1rem; }
+.c-card {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 1.25rem 1.5rem; border-radius: var(--radius-md);
+  background: var(--amber-pale); border: 1px solid rgba(196,140,24,.15);
+  transition: box-shadow .2s;
+}
+.c-card:hover { box-shadow: var(--shadow-sm); }
+.c-ico { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+.c-card h5 { font-size: 13px; font-weight: 600; color: var(--brown); margin-bottom: 3px; }
+.c-card p  { font-size: 14px; color: var(--dark); }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 13px; font-weight: 600; color: var(--dark); letter-spacing: .02em; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'Outfit', sans-serif; font-size: 15px;
+  padding: 13px 16px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border); background: white;
+  color: var(--dark); outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--green); box-shadow: 0 0 0 3px rgba(74,122,30,.1);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #BBB5A8; }
+.form-group textarea { resize: vertical; }
+
+.form-submit { margin-top: .5rem; }
+.form-note { font-size: 12px; color: var(--muted); margin-top: .75rem; }
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer {
+  background: var(--dark); color: var(--cream);
+  padding: clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,4rem) 0;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem; padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(249,244,236,.08);
+}
+.footer-brand-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700; margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.footer-tagline { font-size: 14px; color: rgba(249,244,236,.5); line-height: 1.65; max-width: 260px; }
+.footer-social { display: flex; gap: .75rem; margin-top: 1.5rem; }
+.soc-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(249,244,236,.07); color: rgba(249,244,236,.7);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; transition: background .2s, color .2s; cursor: pointer;
+}
+.soc-btn:hover { background: var(--green); color: white; }
+.footer-col h5 {
+  font-size: 11px; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: rgba(249,244,236,.35);
+  margin-bottom: 1.25rem;
+}
+.footer-col a {
+  display: block; font-size: 14px; color: rgba(249,244,236,.65);
+  margin-bottom: .75rem; transition: color .2s;
+}
+.footer-col a:hover { color: var(--cream); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem 0; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 13px; color: rgba(249,244,236,.3); }
+.footer-bottom a { color: rgba(249,244,236,.5); transition: color .2s; }
+.footer-bottom a:hover { color: var(--cream); }
+
+/* ─── TOAST ──────────────────────────────────────── */
+#toast {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
+  background: var(--green-deep); color: white;
+  padding: 14px 22px; border-radius: var(--radius-md);
+  font-size: 14px; font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(80px); opacity: 0;
+  transition: all .35s cubic-bezier(.34,1.56,.64,1);
+  pointer-events: none;
+}
+#toast.show { transform: translateY(0); opacity: 1; }
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { height: 50vw; min-height: 350px; }
+  .about { grid-template-columns: 1fr; }
+  .about-images { min-height: 380px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .breed-inner { grid-template-columns: 1fr; }
+  .breed-main-photo { height: 360px; }
+  .breed-stat-card { position: static; margin-top: 1.5rem; display: inline-block; }
+  .breed-tag-float { top: 1rem; right: 1rem; }
+  .cuts-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero-left { padding: 3rem 1.5rem; }
+  .hero-h1 { font-size: 2.8rem; }
+  .hero-stats { gap: 1.5rem; }
+  .hero-chip { display: none; }
+  .about-pillars { grid-template-columns: 1fr; }
+  .about-img-thumb { width: 140px; height: 110px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
+  .g-item.tall { grid-row: auto; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-steps::before { display: none; }
+  .contact { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .cta-banner { margin: 0 1rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .trust-bar { justify-content: center; }
+  .trust-divider { display: none; }
+  .products-header { flex-direction: column; align-items: flex-start; }
+  .cuts-grid { grid-template-columns: 1fr; }
+  .breed-specs { grid-template-columns: repeat(3,1fr); }
+}
+
+@media (max-width: 480px) {
+  .hero-h1 { font-size: 2.2rem; }
+  .hero-actions { flex-direction: column; }
+  .hero-stats { flex-wrap: wrap; gap: 1.25rem; }
+  .process-steps { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .g-item { height: 200px; }
+  .cta-actions { flex-direction: column; }
+  .breed-specs { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-icon">🐷</span>
+    GreenPasture Farm
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#investor">Investor</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#breed">Large White</a></li>
+    <li><a href="#pork-cuts">Pig Cuts</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#process">Our Process</a></li>
+    <li><a href="#contact" class="nav-order">Order Now</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about"         onclick="closeMenu()">About</a>
+  <a href="#investor"      onclick="closeMenu()">Investor</a>
+  <a href="#products"      onclick="closeMenu()">Products</a>
+  <a href="#breed"         onclick="closeMenu()">Large White Breed</a>
+  <a href="#pork-cuts"     onclick="closeMenu()">Pig Cuts</a>
+  <a href="#gallery"       onclick="closeMenu()">Gallery</a>
+  <a href="#process"       onclick="closeMenu()">Process</a>
+  <a href="#contact"       onclick="closeMenu()" class="btn btn-green">Order Now</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="tag tag-green hero-tag fade-up">
+      <span class="dot"></span> Farm-Raised, Naturally Fed
+    </div>
+    <h1 class="hero-h1 fade-up d1">
+      Premium Pigs & Pork<br>
+      From <em>Trusted</em><br>
+      <span class="line-under">Nigerian Hands</span>
+    </h1>
+    <p class="hero-desc fade-up d2">
+      Ethically raised, grain-fed pigs for both fresh pork and live stock, delivered from our Akure farm to your door. No middlemen. Just honest, clean pig farming.
+    </p>
+    <div class="hero-actions fade-up d3">
+      <a href="#products" class="btn btn-dark">Shop Products <span class="arrow">→</span></a>
+      <a href="#about"    class="btn btn-outline">Our Story</a>
+    </div>
+    <div class="hero-stats fade-up d4">
+      <div>
+        <div class="stat-n">500+</div>
+        <div class="stat-l">Pigs Raised Yearly</div>
+      </div>
+      <div>
+        <div class="stat-n">12yr</div>
+        <div class="stat-l">In Business</div>
+      </div>
+      <div>
+        <div class="stat-n">98%</div>
+        <div class="stat-l">Happy Customers</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right fade-up d2">
+    <div class="hero-main-img"></div>
+    <div class="hero-img-overlay"></div>
+    <span class="hero-chip">✓ Certified Halal &amp; Safe</span>
+    <div class="hero-img-badge">
+      <div class="hero-badge-icon">🏆</div>
+      <div class="hero-badge-text">
+        <h4>Award-Winning Farm</h4>
+        <p>Best Pig Producer, Southwest Nigeria 2023</p>
+      </div>
+      <div class="hero-badge-rating">
+        <div class="hero-badge-stars">★★★★★</div>
+        <div class="hero-badge-count">4.9 · 200+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="ico">✅</span> NAFDAC Certified</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="ico">🌿</span> No Hormones or Antibiotics</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="ico">🚚</span> Same-Day Delivery in Akure</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="ico">❄️</span> Cold Chain Guaranteed</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="ico">🐷</span> Open-Range Raised</div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about">
+  <div class="about-images">
+    <div class="about-img-main"></div>
+    <div class="about-year-badge">
+      <div class="yr">2026</div>
+      <div class="yl">Est. Akure, Nigeria</div>
+    </div>
+    <div class="about-img-thumb">
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80" alt="Farm produce">
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="section-eyebrow">Our Story</div>
+    <h2 class="section-heading">Launched in 2026 with a promise of honest pig farming</h2>
+    <p class="section-sub">
+      GreenPasture Farm began in 2026 with a clear goal: deliver fresh, locally raised pork and live pigs from the farm directly to your table or farm gate. We raise our animals with space, quality feed, and gentle care so every animal and every cut is safe, flavourful, and ready for Nigerian homes and businesses.
+    </p>
+
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-ico">🌾</div>
+        <h4>Grain-Fed &amp; Natural</h4>
+        <p>No hormones or antibiotics. Pure wholesome feed for healthy, flavourful meat and live stock.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">🌿</div>
+        <h4>Open-Range Living</h4>
+        <p>Our pigs roam freely across lush green pastures every single day.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">🚚</div>
+        <h4>Fresh Delivery</h4>
+        <p>Farm-to-door in under 24 hours for maximum freshness and flavour.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-ico">✅</div>
+        <h4>Certified Quality</h4>
+        <p>Fully inspected, NAFDAC-certified and safety-verified every batch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCTS ─── -->
+<section class="products" id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-eyebrow">Fresh &amp; Premium</div>
+      <h2 class="section-heading">What We Offer</h2>
+    </div>
+    <p style="max-width:280px; color:var(--muted); font-size:15px; text-align:right; line-height:1.6;">
+      All products freshly processed and available for delivery or farm pickup.
+    </p>
+  </div>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=700&q=80" alt="Whole dressed pig">
+        <div class="product-img-overlay"></div>
+        <div class="product-img-badge"><span class="tag tag-dark">Bestseller</span></div>
+      </div>
+      <div class="product-body">
+        <h3>Whole Dressed Pig</h3>
+        <p>Freshly slaughtered and cleaned, ready for your event, restaurant, or celebration. Available 20–80 kg range.</p>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="amount">On request</span>
+          </div>
+          <button class="product-btn" onclick="addToCart('Whole Dressed Pig')" title="Enquire">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=700&q=80" alt="Pork belly ribs">
+        <div class="product-img-overlay"></div>
+        <div class="product-img-badge"><span class="tag tag-green">Popular</span></div>
+      </div>
+      <div class="product-body">
+        <h3>Pork Belly &amp; Ribs</h3>
+        <p>Beautifully marbled cuts ideal for grilling, smoking, or slow-cooking. Rich flavour from our grain-fed stock.</p>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="amount">On request</span>
+          </div>
+          <button class="product-btn" onclick="addToCart('Pork Belly & Ribs')" title="Enquire">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img">
+        <img src="12.png" alt="Healthy live piglets on green pasture">
+        <div class="product-img-overlay"></div>
+        <div class="product-img-badge"><span class="tag tag-amber">Live Stock</span></div>
+      </div>
+      <div class="product-body">
+        <h3>Live Piglets &amp; Weaners</h3>
+          <p>Healthy, vaccinated piglets with excellent genetics. Ideal for starting or growing your own pig farming business.</p>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="amount">On request</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Live Piglets')" title="Enquire">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img">
+          <img src="image.png" alt="Large White boar and sow for breeding stock">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-badge"><span class="tag tag-dark">Breeding Stock</span></div>
+        </div>
+        <div class="product-body">
+          <h3>Breeding Boar &amp; Sow</h3>
+          <p>Top quality breeding stock for reliable production, including Noenetal gilts and Winner Soar boars.</p>
+          <div class="product-footer">
+            <div class="product-price">
+              <span class="amount">On request</span>
+            </div>
+            <button class="product-btn" onclick="addToCart('Breeding Boar & Sow')" title="Enquire">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="breed" id="breed">
+  <div class="breed-inner">
+
+    <div class="breed-image-wrap">
+      <div class="breed-main-photo">
+        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=900&q=80" alt="Large White pig breed on green pasture">
+      </div>
+      <div class="breed-stat-card">
+        <div class="bsc-num">250kg</div>
+        <div class="bsc-label">Average adult weight</div>
+      </div>
+      <div class="breed-tag-float">🏅 Premium Breed</div>
+    </div>
+
+    <div class="breed-content">
+      <div class="section-eyebrow">Our Breed</div>
+      <h2 class="section-heading">We raise the <em>Large White</em> — Nigeria's finest pig breed</h2>
+      <p class="section-sub">
+        The Large White (Yorkshire) is one of the world's most respected pig breeds, prized for its feed efficiency, calm temperament, and strong breeding performance. At GreenPasture Farm, we supply both quality pork and live breeding stock for farmers and restaurants across Nigeria.
+      </p>
+
+      <div class="breed-traits">
+        <div class="breed-trait">
+          <div class="breed-trait-ico">🍖</div>
+          <div class="breed-trait-body">
+            <h4>Exceptional Meat Quality</h4>
+            <p>Large Whites produce excellent meat and reliable breeding stock, making them ideal for live sales, farm expansion, and premium pork production.</p>
+          </div>
+        </div>
+        <div class="breed-trait">
+          <div class="breed-trait-ico">🌱</div>
+          <div class="breed-trait-body">
+            <h4>Superior Feed Efficiency</h4>
+            <p>Reaches market weight faster with less feed, making it the most economical breed for Nigerian pig farming. Our pigs hit 90–100 kg in under 6 months.</p>
+          </div>
+        </div>
+        <div class="breed-trait">
+          <div class="breed-trait-ico">🐣</div>
+          <div class="breed-trait-body">
+            <h4>High Litter Size</h4>
+            <p>Our Large White sows consistently produce 10–14 piglets per litter — one of the highest among all commercial breeds — making them ideal for growing your own farm.</p>
+          </div>
+        </div>
+        <div class="breed-trait">
+          <div class="breed-trait-ico">🌤️</div>
+          <div class="breed-trait-body">
+            <h4>Climate-Adapted Stock</h4>
+            <p>Our bloodlines have been carefully selected for resilience in Nigeria's tropical heat, ensuring healthy growth and low mortality all year round.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="breed-specs">
+        <div class="breed-spec">
+          <div class="spec-val">6 mo</div>
+          <div class="spec-key">To market weight</div>
+        </div>
+        <div class="breed-spec">
+          <div class="spec-val">12+</div>
+          <div class="spec-key">Piglets per litter</div>
+        </div>
+        <div class="breed-spec">
+          <div class="spec-val">85%</div>
+          <div class="spec-key">Lean meat yield</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PIG CUTS GUIDE ─── -->
+<section class="pork-cuts" id="pork-cuts">
+  <div class="pork-cuts-header">
+    <div class="section-eyebrow">Know Your Pig</div>
+    <h2 class="section-heading">Every <em>cut</em>, explained</h2>
+    <p class="section-sub">
+      From snout to tail, every part of our Large White pigs is useful. Here's a guide to the cuts and live stock options we offer, whether you need fresh meat or healthy breeding stock.
+    </p>
+  </div>
+
+  <div class="cuts-layout">
+
+    <!-- Pig SVG Diagram -->
+    <div class="pig-diagram-wrap">
+      <h3>Cuts diagram</h3>
+      <div class="pig-svg-container">
+        <svg viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg" aria-label="Diagram of pig cuts">
+          <!-- Body -->
+          <ellipse cx="170" cy="120" rx="120" ry="68" fill="#F5ECD8" stroke="#C8895A" stroke-width="1.5"/>
+          <!-- Head -->
+          <ellipse cx="62" cy="108" rx="46" ry="40" fill="#F5ECD8" stroke="#C8895A" stroke-width="1.5"/>
+          <!-- Snout -->
+          <ellipse cx="24" cy="112" rx="16" ry="12" fill="#E8D4B8" stroke="#C8895A" stroke-width="1"/>
+          <!-- Nostrils -->
+          <circle cx="19" cy="113" r="3" fill="#C8895A" opacity=".4"/>
+          <circle cx="29" cy="113" r="3" fill="#C8895A" opacity=".4"/>
+          <!-- Ear -->
+          <ellipse cx="72" cy="74" rx="14" ry="20" fill="#E8D4B8" stroke="#C8895A" stroke-width="1" transform="rotate(-15 72 74)"/>
+          <!-- Eye -->
+          <circle cx="52" cy="97" r="5" fill="#C8895A" opacity=".5"/>
+          <circle cx="52" cy="97" r="2.5" fill="#6B3D1E"/>
+          <!-- Tail -->
+          <path d="M290 120 Q310 100 305 85 Q300 75 310 70" fill="none" stroke="#C8895A" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Front legs -->
+          <rect x="90" y="175" width="22" height="32" rx="6" fill="#E8D4B8" stroke="#C8895A" stroke-width="1"/>
+          <rect x="118" y="178" width="22" height="28" rx="6" fill="#E8D4B8" stroke="#C8895A" stroke-width="1"/>
+          <!-- Back legs -->
+          <rect x="210" y="175" width="22" height="32" rx="6" fill="#E8D4B8" stroke="#C8895A" stroke-width="1"/>
+          <rect x="238" y="178" width="22" height="28" rx="6" fill="#E8D4B8" stroke="#C8895A" stroke-width="1"/>
+
+          <!-- Cut zone overlays -->
+          <!-- Shoulder / Boston Butt -->
+          <ellipse cx="110" cy="110" rx="34" ry="46" fill="#E74C3C" opacity=".18" stroke="#E74C3C" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Loin -->
+          <ellipse cx="170" cy="105" rx="28" ry="40" fill="#27AE60" opacity=".18" stroke="#27AE60" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Belly -->
+          <ellipse cx="168" cy="148" rx="35" ry="22" fill="#F39C12" opacity=".22" stroke="#F39C12" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Ham / Rear -->
+          <ellipse cx="240" cy="115" rx="38" ry="46" fill="#8E44AD" opacity=".15" stroke="#8E44AD" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Ribs -->
+          <ellipse cx="148" cy="130" rx="24" ry="30" fill="#2980B9" opacity=".15" stroke="#2980B9" stroke-width="1" stroke-dasharray="4 3"/>
+
+          <!-- Labels -->
+          <text x="107" y="88" font-size="9" font-weight="600" fill="#8B2515" text-anchor="middle" font-family="Outfit, sans-serif">Shoulder</text>
+          <text x="172" y="80" font-size="9" font-weight="600" fill="#155724" text-anchor="middle" font-family="Outfit, sans-serif">Loin</text>
+          <text x="168" y="162" font-size="9" font-weight="600" fill="#856404" text-anchor="middle" font-family="Outfit, sans-serif">Belly</text>
+          <text x="243" y="90" font-size="9" font-weight="600" fill="#4a235a" text-anchor="middle" font-family="Outfit, sans-serif">Ham</text>
+          <text x="140" y="140" font-size="9" font-weight="600" fill="#1a4971" text-anchor="middle" font-family="Outfit, sans-serif">Ribs</text>
+          <text x="40" y="108" font-size="9" font-weight="600" fill="#5D4037" text-anchor="middle" font-family="Outfit, sans-serif">Head</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Cut Cards -->
+    <div class="cuts-grid">
+
+      <div class="cut-card">
+        <div class="cut-card-top">
+          <div class="cut-color-dot" style="background:#E74C3C;"></div>
+          <h4>Shoulder / Boston Butt</h4>
+        </div>
+        <p>Rich, well-marbled cut from the upper front leg. Incredibly flavourful when slow-cooked or smoked for hours.</p>
+        <div class="cut-card-tags">
+          <span class="cut-mini-tag">Stewing</span>
+          <span class="cut-mini-tag">BBQ</span>
+          <span class="cut-mini-tag">Suya</span>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-card-top">
+          <div class="cut-color-dot" style="background:#27AE60;"></div>
+          <h4>Pork Loin</h4>
+        </div>
+        <p>The prized lean cut from the back. Mild flavour, low fat, and incredibly tender. Great for chops or roasting whole.</p>
+        <div class="cut-card-tags">
+          <span class="cut-mini-tag">Roasting</span>
+          <span class="cut-mini-tag">Chops</span>
+          <span class="cut-mini-tag">Grilling</span>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-card-top">
+          <div class="cut-color-dot" style="background:#F39C12;"></div>
+          <h4>Pork Belly</h4>
+        </div>
+        <p>Our most popular cut. Fatty, juicy layers that render down beautifully in the pan or over an open fire.</p>
+        <div class="cut-card-tags">
+          <span class="cut-mini-tag amber">Frying</span>
+          <span class="cut-mini-tag amber">Grilling</span>
+          <span class="cut-mini-tag amber">Asun-style</span>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-card-top">
+          <div class="cut-color-dot" style="background:#2980B9;"></div>
+          <h4>Spare Ribs</h4>
+        </div>
+        <p>Meaty bones from the belly side, perfect for Nigerian pepper soup, outdoor BBQ, or slow braising in sauce.</p>
+        <div class="cut-card-tags">
+          <span class="cut-mini-tag">Pepper Soup</span>
+          <span class="cut-mini-tag">BBQ</span>
+          <span class="cut-mini-tag">Braising</span>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-card-top">
+          <div class="cut-color-dot" style="background:#8E44AD;"></div>
+          <h4>Ham (Hind Leg)</h4>
+        </div>
+        <p>Large, lean rear leg cut. Ideal for whole roasting at events, slicing for suya, or curing and smoking.</p>
+        <div class="cut-card-tags">
+          <span class="cut-mini-tag">Events</span>
+          <span class="cut-mini-tag">Roasting</span>
+          <span class="cut-mini-tag">Smoking</span>
+        </div>
+      </div>
+
+      <div class="cut-card">
+        <div class="cut-card-top">
+          <div class="cut-color-dot" style="background:#5D4037;"></div>
+          <h4>Head &amp; Offal</h4>
+        </div>
+        <p>Ears, snout, trotters, liver, heart, and intestines. Beloved for Nigerian soups, pepper soup, and point-and-kill spots.</p>
+        <div class="cut-card-tags">
+          <span class="cut-mini-tag amber">Pepper Soup</span>
+          <span class="cut-mini-tag amber">Offal Fry</span>
+          <span class="cut-mini-tag amber">Soup</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="#contact" class="btn btn-dark">Order Your Preferred Cut <span class="arrow">→</span></a>
+    <p style="font-size:13px; color:var(--muted); margin-top:1rem;">Custom cuts available — just let us know in the enquiry form.</p>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <div class="section-eyebrow">Farm Life</div>
+    <h2 class="section-heading">A glimpse into our <em>world</em></h2>
+    <p class="section-sub">Transparency is core to who we are. Here's what life looks like on our farm every day.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="g-item tall">
+      <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80" alt="Farm pasture">
+      <div class="g-caption">Our open pastures</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Green fields">
+      <div class="g-caption">Lush green fields</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80" alt="Farm harvest">
+      <div class="g-caption">Seasonal harvest</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?w=600&q=80" alt="Farm animals">
+      <div class="g-caption">Happy, healthy animals</div>
+    </div>
+    <div class="g-item">
+      <img src="https://images.unsplash.com/photo-1606471191009-63994c53433b?w=600&q=80" alt="Fresh pork">
+      <div class="g-caption">Premium fresh cuts</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="process" id="process">
+  <div class="process-header">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-heading" style="color:var(--cream)">From our farm <em style="color:var(--amber)">to your table</em></h2>
+  </div>
+
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <span class="step-ico">🌾</span>
+      <h4>Natural Rearing</h4>
+      <p>Pigs are raised on open pasture with wholesome grain feed and clean water, stress-free.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <span class="step-ico">🏥</span>
+      <h4>Regular Health Checks</h4>
+      <p>Certified vets inspect every animal regularly to ensure peak health and safety standards.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <span class="step-ico">⚡</span>
+      <h4>Hygienic Processing</h4>
+      <p>Humane and chemical-free processing in our NAFDAC-certified facility. Handled with care.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <span class="step-ico">🚚</span>
+      <h4>Cold-Chain Delivery</h4>
+      <p>Packed fresh and delivered cold to your door within 24 hours of your confirmed order.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INVESTOR ─── -->
+<section class="investor" id="investor">
+  <div class="investor-intro">
+    <div class="section-eyebrow">Investor Relations</div>
+    <h2 class="section-heading">Invest in our full pig farm growth</h2>
+    <p class="section-sub">GreenPasture Farm is ready to scale production, expand live stock sales, and grow our cold-chain and breeding operations. We seek partners who believe in sustainable, high-quality pig farming across Nigeria.</p>
+  </div>
+
+  <div class="investor-grid">
+    <div class="investor-card">
+      <div class="investor-card-icon">💼</div>
+      <h4>Strong market demand</h4>
+      <p>Premium pigs, live stock, and pork are in high demand among restaurants, farms, hotels, event caterers, and households seeking quality protein and breeding stock.</p>
+    </div>
+    <div class="investor-card">
+      <div class="investor-card-icon">🌱</div>
+      <h4>Sustainable expansion</h4>
+      <p>Your investment supports better cold storage, faster delivery, and farm growth that improves product quality and reliability.</p>
+    </div>
+    <div class="investor-card">
+      <div class="investor-card-icon">🤝</div>
+      <h4>Transparent partnership</h4>
+      <p>We offer clear communication, regular updates, and a dedicated team to manage operations and investor engagement.</p>
+    </div>
+    <div class="investor-card">
+      <div class="investor-card-icon">📧</div>
+      <h4>Easy next steps</h4>
+      <p>Get in touch via the contact form below or send a note to stephenfemikingsley@gmail.com to start the conversation.</p>
+    </div>
+  </div>
+
+  <div class="investor-actions">
+    <a href="#contact" class="btn btn-green">Contact Us</a>
+    <a href="mailto:stephenfemikingsley@gmail.com" class="btn btn-outline">Email Investor Team</a>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header">
+    <div class="section-eyebrow">Customer Love</div>
+    <h2 class="section-heading">What our customers are <em>saying</em></h2>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <span class="testi-stars">★★★★★</span>
+      <p class="testi-quote">"We ordered a whole pig for our wedding and it was absolutely perfect — fresh, clean, delivered right on time. Our guests couldn't stop talking about the quality!"</p>
+      <div class="testi-author">
+        <div class="testi-av av-a">AC</div>
+        <div>
+          <div class="testi-name">Adaeze Chioma</div>
+          <div class="testi-loc">Abuja, FCT</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <span class="testi-stars">★★★★★</span>
+      <p class="testi-quote">"We started working with GreenPasture after they launched in Akure, and the pork belly quality has been consistently excellent. Highly recommended."</p>
+      <div class="testi-author">
+        <div class="testi-av av-b">BK</div>
+        <div>
+          <div class="testi-name">Babatunde Kehinde</div>
+          <div class="testi-loc">Akure, Ondo</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <span class="testi-stars">★★★★★</span>
+      <p class="testi-quote">"I bought three weaners to start my own farm. All healthy, well-fed, just as described. The team even gave me great advice on raising them. Fantastic people!"</p>
+      <div class="testi-author">
+        <div class="testi-av av-c">EM</div>
+        <div>
+          <div class="testi-name">Emeka Madu</div>
+          <div class="testi-loc">Enugu State</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<div class="cta-banner" style="margin-bottom: clamp(4rem,8vw,7rem);">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <span class="tag tag-amber">Limited Stock Available</span>
+    <h2 class="section-heading">Ready to taste the <em>difference?</em></h2>
+    <p>Place your order today for fresh pork, live piglets, or breeding stock. Bulk discounts and farm support are available for restaurants, farms, and event caterers.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn btn-green">Place an Order <span class="arrow">→</span></a>
+      <a href="https://wa.me/2348052880962" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,.35);">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-heading">Let's talk <em>business</em></h2>
+    <p class="section-sub">Fill the form and we'll respond within a few hours. Bulk orders, custom cuts, live stock — we handle it all.</p>
+
+    <div class="contact-cards">
+      <div class="c-card">
+        <span class="c-ico">📞</span>
+        <div>
+          <h5>Phone / WhatsApp</h5>
+          <p>08052880962</p>
+        </div>
+      </div>
+      <div class="c-card">
+        <span class="c-ico">📍</span>
+        <div>
+          <h5>Farm Location</h5>
+          <p>Km 14 Irese Akure, Ondo State</p>
+        </div>
+      </div>
+      <div class="c-card">
+        <span class="c-ico">📧</span>
+        <div>
+          <h5>Email Us</h5>
+          <p>stephenfemikingsley@gmail.com</p>
+        </div>
+      </div>
+      <div class="c-card">
+        <span class="c-ico">🕐</span>
+        <div>
+          <h5>Working Hours</h5>
+          <p>Monday – Saturday: 7:00am – 6:00pm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Full Name *</label>
+          <input type="text" id="fname" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="fphone">Phone / WhatsApp *</label>
+          <input type="tel" id="fphone" placeholder="+234 ..." required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="femail">Email Address *</label>
+        <input type="email" id="femail" placeholder="you@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="fproduct">What are you interested in?</label>
+        <select id="fproduct">
+          <option value="">Select a product...</option>
+          <option>Whole Dressed Pig</option>
+          <option>Pork Belly &amp; Ribs</option>
+          <option>Pork Loin / Chops</option>
+          <option>Spare Ribs</option>
+          <option>Ham (Hind Leg)</option>
+          <option>Head &amp; Offal</option>
+          <option>Shoulder / Boston Butt</option>
+          <option>Live Piglets / Weaners (Large White)</option>
+          <option>Breeding Boar / Sow</option>
+          <option>Bulk / Wholesale Supply</option>
+          <option>Farm Visit</option>
+          <option>Other / Custom Cut</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fmsg">Message / Special Requirements</label>
+        <textarea id="fmsg" rows="4" placeholder="Tell us about your order, quantity, preferred delivery date, location..."></textarea>
+      </div>
+      <div class="form-submit">
+        <button class="btn btn-green" id="contactSubmitBtn" onclick="submitForm()" type="button" style="font-size:16px; padding:15px 38px;">
+          <span class="btn-text">Send Enquiry</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+          <span class="arrow">→</span>
+        </button>
+        <p class="form-note">✓ We typically respond within 2–4 hours during business hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">🐷 GreenPasture Farm</div>
+      <p class="footer-tagline">Honest pig farming. Premium pork and live stock. Delivered fresh from our family to yours since 2026.</p>
+      <div class="footer-social">
+        <div class="soc-btn" title="Facebook">f</div>
+        <a class="soc-btn" title="Instagram" href="https://www.instagram.com/agriconnect.ng?igsh=MnYxM3E3NHkyNGJh&utm_source=qr" target="_blank" rel="noreferrer noopener">📸</a>
+        <div class="soc-btn" title="WhatsApp">💬</div>
+        <div class="soc-btn" title="Twitter/X">𝕏</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Products</h5>
+      <a href="#">Whole Dressed Pig</a>
+      <a href="#">Pork Belly &amp; Ribs</a>
+      <a href="#">Pork Loin &amp; Chops</a>
+      <a href="#">Live Piglets (Large White)</a>
+      <a href="#">Bulk &amp; Wholesale</a>
+    </div>
+    <div class="footer-col">
+      <h5>Farm</h5>
+      <a href="#">Our Story</a>
+      <a href="#">Large White Breed</a>
+      <a href="#">Pig Cuts Guide</a>
+      <a href="#">Farm Gallery</a>
+      <a href="#">Visit the Farm</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="#">WhatsApp Us</a>
+      <a href="#">Email Support</a>
+      <a href="#">Delivery Info</a>
+      <a href="#">Wholesale Enquiry</a>
+      <a href="#">FAQs</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 GreenPasture Farm Nigeria. All rights reserved.</p>
+    <p>Made with ❤️ &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<!-- ─── TOAST ─── -->
+<div id="toast"></div>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// Toast
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// Add to cart
+function addToCart(item) {
+  showToast('✓ Added: ' + item + ' — scroll down to enquire!');
+  setTimeout(() => {
+    document.getElementById('fproduct').value = item;
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 600);
+}
+
+// Form submit
+async function submitForm() {
+  const name    = document.getElementById('fname').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const email   = document.getElementById('femail').value.trim();
+  const product = document.getElementById('fproduct').value;
+  const message = document.getElementById('fmsg').value.trim();
+
+  if (!name)  { showToast('⚠️ Please enter your name'); return; }
+  if (!phone) { showToast('⚠️ Please enter your phone number'); return; }
+  if (!email) { showToast('⚠️ Please enter your email address'); return; }
+
+  const btn = document.getElementById('contactSubmitBtn');
+  const btnText = btn.querySelector('.btn-text');
+  const spinner = btn.querySelector('.btn-spinner');
+  btn.classList.add('loading');
+  btn.disabled = true;
+  btnText.textContent = 'Sending...';
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, phone, email, product, message })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      showToast('✅ Enquiry sent! Check your email for confirmation.');
+      ['fname','fphone','femail','fmsg'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('fproduct').selectedIndex = 0;
+    } else {
+      showToast('❌ ' + (data.error || 'Something went wrong.'));
+    }
+  } catch (err) {
+    console.error(err);
+    showToast('❌ Network error. Please try again or WhatsApp us.');
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+    btnText.textContent = 'Send Enquiry';
+  }
+}
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = 1;
+      e.target.style.transform = 'translateY(0)';
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.product-card, .testi-card, .step, .pillar, .c-card, .g-item, .breed-trait, .cut-card').forEach(el => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>

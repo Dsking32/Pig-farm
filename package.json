@@ -1,0 +1,17 @@
+{
+  "name": "greenpasturefarm",
+  "version": "1.0.0",
+  "description": "Contact form backend for GreenPasture Farm using Nodemailer and Gmail.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.18.4",
+    "nodemailer": "^6.9.4",
+    "dotenv": "^16.3.1"
+  }
+}
